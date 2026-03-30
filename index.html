@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WELCOMEITZFIZZ — Scroll Hero</title>
+
+  <!-- Google Fonts: Editorial + Utility -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <!-- GSAP + ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- ========== CURSOR ========== -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- ========== NAV ========== -->
+  <nav class="nav" id="nav">
+    <div class="nav__logo">ITZFIZZ</div>
+    <div class="nav__links">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav__cta">
+      <button class="btn-outline">Get Started</button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="hero">
+
+    <!-- Noise grain overlay -->
+    <div class="hero__grain"></div>
+
+    <!-- Background floating orbs -->
+    <div class="hero__orb hero__orb--1"></div>
+    <div class="hero__orb hero__orb--2"></div>
+    <div class="hero__orb hero__orb--3"></div>
+
+    <!-- Grid lines -->
+    <div class="hero__grid"></div>
+
+    <!-- Scroll indicator -->
+    <div class="hero__scroll-hint" id="scrollHint">
+      <span class="scroll-text">SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+
+    <!-- Main hero content -->
+    <div class="hero__content">
+
+      <!-- Letter-spaced headline — each letter animates independently -->
+      <h1 class="hero__headline" id="headline" aria-label="WELCOMEITZFIZZ">
+        <span class="letter-row" id="letterRow">
+          <span class="letter" data-letter="W">W</span>
+          <span class="letter" data-letter="E">E</span>
+          <span class="letter" data-letter="L">L</span>
+          <span class="letter" data-letter="C">C</span>
+          <span class="letter" data-letter="O">O</span>
+          <span class="letter" data-letter="M">M</span>
+          <span class="letter" data-letter="E">E</span>
+          <span class="letter letter--accent" data-letter="I">I</span>
+          <span class="letter" data-letter="T">T</span>
+          <span class="letter" data-letter="Z">Z</span>
+          <span class="letter letter--accent" data-letter="F">F</span>
+          <span class="letter" data-letter="I">I</span>
+          <span class="letter" data-letter="Z">Z</span>
+          <span class="letter" data-letter="Z">Z</span>
+        </span>
+      </h1>
+
+      <!-- Tagline -->
+      <div class="hero__tagline" id="tagline">
+        <div class="tagline-line" id="taglineLine1">Scroll-driven experiences.</div>
+        <div class="tagline-line" id="taglineLine2">Crafted with precision.</div>
+      </div>
+
+      <!-- Impact metrics / stats -->
+      <div class="hero__stats" id="stats">
+        <div class="stat" data-delay="0">
+          <span class="stat__number" data-target="98">0</span>
+          <span class="stat__suffix">%</span>
+          <span class="stat__label">Performance Score</span>
+        </div>
+        <div class="stat" data-delay="0.1">
+          <span class="stat__number" data-target="240">0</span>
+          <span class="stat__suffix">+</span>
+          <span class="stat__label">Projects Shipped</span>
+        </div>
+        <div class="stat" data-delay="0.2">
+          <span class="stat__number" data-target="12">0</span>
+          <span class="stat__suffix">ms</span>
+          <span class="stat__label">Avg Interaction Latency</span>
+        </div>
+        <div class="stat" data-delay="0.3">
+          <span class="stat__number" data-target="4">0</span>
+          <span class="stat__suffix">x</span>
+          <span class="stat__label">Faster Load Times</span>
+        </div>
+      </div>
+
+      <!-- CTA row -->
+      <div class="hero__cta" id="heroCTA">
+        <button class="btn-primary" id="ctaBtn">
+          <span>Explore Work</span>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="hero__badge">
+          <span class="badge-dot"></span>
+          <span>Available for projects</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- The main scroll-driven VISUAL object -->
+    <div class="hero__visual" id="heroVisual">
+      <div class="visual-card" id="visualCard">
+        <div class="visual-card__inner">
+          <div class="visual-card__glow"></div>
+          <div class="visual-card__content">
+            <div class="card-icon">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="35" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4 4"/>
+                <circle cx="40" cy="40" r="20" fill="var(--accent)" fill-opacity="0.1" stroke="var(--accent)" stroke-width="1"/>
+                <path d="M28 40l8 8 16-16" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="card-text">
+              <div class="card-label">LIVE PREVIEW</div>
+              <div class="card-title">Car Scroll<br/>Animation</div>
+              <div class="card-meta">Scroll to reveal ↓</div>
+            </div>
+          </div>
+          <div class="visual-card__progress">
+            <div class="progress-bar" id="progressBar">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <span class="progress-label" id="progressLabel">0%</span>
+          </div>
+        </div>
+        <!-- Floating badge on card -->
+        <div class="card-tag card-tag--top">GSAP</div>
+        <div class="card-tag card-tag--bottom">ScrollTrigger</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========== ABOUT SECTION (demonstrates scroll continuation) ========== -->
+  <section class="about-section" id="about">
+    <div class="about-section__inner">
+      <div class="about-reveal" id="aboutReveal">
+        <p class="about-eyebrow">WHO WE ARE</p>
+        <h2 class="about-headline">
+          We build<br/><em>motion-first</em><br/>interfaces.
+        </h2>
+        <p class="about-body">
+          Every pixel animated with purpose. Every scroll interaction telling a story.
+          We specialise in premium web experiences that feel alive — responsive to the 
+          user, driven by intention.
+        </p>
+      </div>
+      <!-- Floating cards that parallax in -->
+      <div class="about-cards" id="aboutCards">
+        <div class="about-card about-card--1">
+          <span class="about-card__icon">⚡</span>
+          <span class="about-card__text">Lightning Performance</span>
+        </div>
+        <div class="about-card about-card--2">
+          <span class="about-card__icon">🎯</span>
+          <span class="about-card__text">Scroll Precision</span>
+        </div>
+        <div class="about-card about-card--3">
+          <span class="about-card__icon">✦</span>
+          <span class="about-card__text">Motion Design</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WORK SECTION ========== -->
+  <section class="work-section" id="work">
+    <div class="work-section__header">
+      <p class="section-eyebrow">SELECTED WORK</p>
+      <h2 class="section-headline">Featured Projects</h2>
+    </div>
+    <div class="work-grid" id="workGrid">
+      <div class="work-card" data-index="0">
+        <div class="work-card__bg" style="--card-color: #c8f562;"></div>
+        <div class="work-card__content">
+          <span class="work-card__number">01</span>
+          <h3 class="work-card__title">Scroll Cinema</h3>
+          <p class="work-card__desc">Parallax storytelling with frame-by-frame scroll control.</p>
+          <a href="#" class="work-card__link">View Case →</a>
+        </div>
+      </div>
+      <div class="work-card" data-index="1">
+        <div class="work-card__bg" style="--card-color: #ff6b35;"></div>
+        <div class="work-card__content">
+          <span class="work-card__number">02</span>
+          <h3 class="work-card__title">Motion Kit</h3>
+          <p class="work-card__desc">Reusable GSAP animation components for design systems.</p>
+          <a href="#" class="work-card__link">View Case →</a>
+        </div>
+      </div>
+      <div class="work-card" data-index="2">
+        <div class="work-card__bg" style="--card-color: #7c5cbf;"></div>
+        <div class="work-card__content">
+          <span class="work-card__number">03</span>
+          <h3 class="work-card__title">Velocity UI</h3>
+          <p class="work-card__desc">High-performance dashboard with 60fps micro-interactions.</p>
+          <a href="#" class="work-card__link">View Case →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT / FOOTER ========== -->
+  <section class="contact-section" id="contact">
+    <div class="contact-section__inner">
+      <div class="contact-left" id="contactLeft">
+        <p class="contact-eyebrow">LET'S TALK</p>
+        <h2 class="contact-headline">Ready to build<br/>something<br/><em>extraordinary?</em></h2>
+      </div>
+      <div class="contact-right" id="contactRight">
+        <a href="mailto:hello@itzfizz.dev" class="contact-email">hello@itzfizz.dev</a>
+        <div class="contact-social">
+          <a href="#" class="social-link">GitHub</a>
+          <a href="#" class="social-link">Twitter</a>
+          <a href="#" class="social-link">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <span>© 2026 ITZFIZZ. All rights reserved.</span>
+      <span>Built with GSAP + ScrollTrigger</span>
+    </div>
+  </section>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
